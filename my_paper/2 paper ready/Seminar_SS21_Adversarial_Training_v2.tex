@@ -165,7 +165,7 @@ Note that setting $k=1$ and $\alpha=\epsilon$ this resembles FGSM, so it can als
 Another approach that improves on FGSM brought in by \cite{b5} was Free Training. The main idea is to use the gradients from the outer minimization at time t for the gradient ascent of the adversarial example at time t+1. To reach a comparable robustness as K-PGD, each mini-batch is replayed $m$ times. Additionally, a new mini-batch is warm started by the perturbation of the previous one. To stay efficient the number of epochs is lowered accordingly, resulting in nearly no overhead compared to traditional training.
 Fast Training, by \cite{b3}, further improved on Free Training by using FGSM with random initialization and getting rid of the mini-batch replay. They showed that the important ingredient to be comparably robust is only allowing for radomized initialization for the perturbation and thus could drastically speed up the training process. \\
 % maybe put at the end of section or at beginning of comparison
-Additionally, several training settings can influence the performance. Using another optimizer like momentum empirically leads to better adversarial examples \cite{b29}. Furthermore, increasing the capacity of a model can lead to improved robustness, as shown by \cite{b2}. Therefore, there is not one approach that works for all problems. Instead, one should try different training setups, including different threat models.
+Additionally, several training settings can influence the performance. Using another optimizer like momentum empirically leads to better adversarial examples \cite{b29}. Furthermore, increasing the capacity of a model can lead to improved robustness, as shown by \cite{b2}. Therefore, there is not a single approach that works for all problems. Instead, one should try different training setups, including different threat models.
   
 \subsection{Universal Adversarial Training}
 Universal Adversarial Training (UAT) is a method that does not try to find a perturbation for each single sample but rather a global perturbation that fools the classifier for many samples, hence the name universal. The difference can also be seen in the objective function which iterates over all samples in the inner term. As it tries to find a universal perturbation it is more constrained than the standard approach and hence leads to a less robust model, while reducing the training time. \\
@@ -215,7 +215,7 @@ Even though adversarial training is a good step for increased robustness, a gene
 
 \appendix
 \section{Quantitative comparison of adversarial trained models on CIFAR10}
-To better follow the results of section \ref{rev} the following table contains the quantitative values for trained CIFAR10 models of the presented methods in this paper. Again be careful to rank those approaches only by numbers, as the training setup, as well as the attack model differ between papers. Below the table the differences in training are summarized. To check the precise parameters and architectures the papers are linked.
+The following table contains quantitative results from models trained on CIFAR10 to support the comparisons of the presented methods in section \ref{rev} of this paper. Again, be careful to rank those approaches only by numbers, as the training setup, as well as the attack model differ between papers. Below the table the differences in training are summarized. To check the precise parameters and architectures the papers are linked.
 \vspace*{-0.2cm}
 
 \begin{table}[!htbp]
